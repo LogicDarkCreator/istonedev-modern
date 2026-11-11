@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In & Register — ISTONEDEV Lab</title>
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">ISTONEDEV<span>Lab</span></a>
+      <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <a href="index.html#materials">Materials</a>
+        <a href="index.html#about">About</a>
+        <a href="cabinet.html" class="auth-only">Dashboard</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-outline">← Back to Home</a>
+        <button type="button" class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="auth-page">
+    <div class="container">
+      <div class="auth-box">
+        <div class="auth-tabs">
+          <button type="button" class="auth-tab active" data-tab="login">Sign In</button>
+          <button type="button" class="auth-tab" data-tab="register">Register</button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="loginForm" class="auth-form active" novalidate>
+          <h2>Welcome Back</h2>
+          <p class="subtitle">Enter your credentials to access your dashboard</p>
+
+          <div class="form-group">
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" placeholder="name@example.com" required>
+            <span class="error-msg" id="loginEmailError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" placeholder="At least 6 characters" required>
+            <span class="error-msg" id="loginPasswordError"></span>
+          </div>
+
+          <div class="form-alert" id="loginGlobalError"></div>
+
+          <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+        </form>
+
+        <!-- Register Form -->
+        <form id="registerForm" class="auth-form" novalidate>
+          <h2>Create Profile</h2>
+          <p class="subtitle">Join the ISTONEDEV Lab community</p>
+
+          <div class="form-group">
+            <label for="regName">Name or Handle</label>
+            <input type="text" id="regName" placeholder="Alex Stone" required>
+            <span class="error-msg" id="regNameError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="regEmail">Email</label>
+            <input type="email" id="regEmail" placeholder="name@example.com" required>
+            <span class="error-msg" id="regEmailError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="regPassword">Password</label>
+            <input type="password" id="regPassword" placeholder="Minimum 6 characters" required>
+            <span class="error-msg" id="regPasswordError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="regConfirm">Confirm Password</label>
+            <input type="password" id="regConfirm" placeholder="Repeat your password" required>
+            <span class="error-msg" id="regConfirmError"></span>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="regAgree" required>
+            <label for="regAgree">I agree to the platform terms and local data storage policy</label>
+          </div>
+          <span class="error-msg" id="regAgreeError"></span>
+
+          <div class="form-alert" id="regGlobalError"></div>
+
+          <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <p>© 2026 ISTONEDEV Lab. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

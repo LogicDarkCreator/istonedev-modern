@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — ISTONEDEV Lab</title>
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">ISTONEDEV<span>Lab</span></a>
+      <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <a href="index.html#materials">Materials</a>
+        <a href="index.html#about">About</a>
+        <a href="cabinet.html" class="active auth-only">Dashboard</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="auth.html" class="btn btn-primary guest-only">Sign In</a>
+        <span class="user-badge auth-only" id="headerUserName"></span>
+        <button type="button" class="btn btn-outline auth-only" id="logoutBtn">Log Out</button>
+        <button type="button" class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <!-- Access Denied State -->
+      <div class="denied-box" id="deniedBlock" style="display: none;">
+        <div class="denied-icon">🔒</div>
+        <h2>Access Restricted</h2>
+        <p>The personal dashboard is available only to signed-in members of ISTONEDEV Lab.</p>
+        <a href="auth.html" class="btn btn-primary">Go to Sign In</a>
+      </div>
+
+      <!-- Dashboard Content -->
+      <div id="cabinetContent" style="display: none;">
+        <div class="cabinet-header">
+          <div class="profile-card">
+            <div class="avatar-circle" id="userAvatar">U</div>
+            <div class="profile-details">
+              <span class="badge">Lab Member</span>
+              <h1 id="cabUserName">Username</h1>
+              <p><strong>Email:</strong> <span id="cabUserEmail"></span></p>
+              <p><strong>Member since:</strong> <span id="cabUserDate"></span></p>
+            </div>
+          </div>
+          <button type="button" class="btn btn-outline" id="cabLogoutBtn">Log Out</button>
+        </div>
+
+        <div class="cabinet-favorites">
+          <h2>Saved Materials (<span id="favCount">0</span>)</h2>
+          <p class="subtitle">Articles and guides you bookmarked on the main page</p>
+          <div class="cards-grid" id="favGrid"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <p>© 2026 ISTONEDEV Lab. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

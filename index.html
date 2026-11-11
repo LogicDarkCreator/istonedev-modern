@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISTONEDEV Lab — Development, Music & Gaming</title>
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">ISTONEDEV<span>Lab</span></a>
+
+      <nav class="nav" id="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="#materials">Materials</a>
+        <a href="#about">About</a>
+        <a href="#footer">Contacts</a>
+        <a href="cabinet.html" class="auth-only">Dashboard</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="auth.html" class="btn btn-primary guest-only">Sign In</a>
+        <a href="cabinet.html" class="user-badge auth-only" id="headerUserName">Profile</a>
+        <button type="button" class="btn btn-outline auth-only" id="logoutBtn">Log Out</button>
+        <button type="button" class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-content">
+        <span class="badge">DEV • SOUND • PLAY</span>
+        <h1>Digital Creative Hub <span class="gradient-text">ISTONEDEV Lab</span></h1>
+        <p>Exploring modern web architecture, crafting electronic sound design, and breaking down indie game mechanics in one unified space.</p>
+        <div class="hero-btns">
+          <a href="#materials" class="btn btn-primary">Explore Materials</a>
+          <a href="#about" class="btn btn-outline">About Lab</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slider -->
+    <section class="section">
+      <div class="container">
+        <div class="slider" id="slider">
+          <div class="slide active" style="--slide-accent: #7c3aed;">
+            <div class="slide-icon">💻</div>
+            <div class="slide-text">
+              <span class="slide-tag">Development</span>
+              <h2>Clean Code & Web Architecture</h2>
+              <p>Guides on vanilla JavaScript, rendering optimization, and modern UI engineering with zero heavy dependencies.</p>
+            </div>
+          </div>
+
+          <div class="slide" style="--slide-accent: #06b6d4;">
+            <div class="slide-icon">🎧</div>
+            <div class="slide-text">
+              <span class="slide-tag">Music</span>
+              <h2>Sound Design & Synthesis</h2>
+              <p>Electronic music production breakdowns, analog filter routing, and crisp mastering workflows.</p>
+            </div>
+          </div>
+
+          <div class="slide" style="--slide-accent: #ec4899;">
+            <div class="slide-icon">🎮</div>
+            <div class="slide-text">
+              <span class="slide-tag">Gaming</span>
+              <h2>Game Dev & Interactive Mechanics</h2>
+              <p>Designing tight game loops, analyzing indie hits, and writing procedural shaders for browser games.</p>
+            </div>
+          </div>
+
+          <button type="button" class="slider-btn prev" id="prevSlide" aria-label="Previous slide">‹</button>
+          <button type="button" class="slider-btn next" id="nextSlide" aria-label="Next slide">›</button>
+
+          <div class="slider-dots" id="sliderDots">
+            <button type="button" class="dot active" aria-label="Slide 1"></button>
+            <button type="button" class="dot" aria-label="Slide 2"></button>
+            <button type="button" class="dot" aria-label="Slide 3"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Zero-Fluff Practice</h3>
+            <p>Only actionable coding patterns, synth patches, and real-world engineering breakdowns.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎛️</div>
+            <h3>Cross-Disciplinary</h3>
+            <p>Bridging software engineering, generative audio, and interactive game experiences.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔖</div>
+            <h3>Personal Library</h3>
+            <p>Bookmark your favorite articles and tutorials directly inside your personal dashboard.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Materials Grid -->
+    <section class="section" id="materials">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Lab Knowledge Base</h2>
+            <p class="subtitle">Curated guides, tutorials, and breakdowns across three core tracks</p>
+          </div>
+
+          <!-- Search -->
+          <div class="search-box">
+            <label for="searchInput" class="sr-only">Search materials</label>
+            <input type="text" id="searchInput" placeholder="Search by title or keyword...">
+          </div>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="filter-bar" id="filterBar">
+          <button type="button" class="filter-btn active" data-category="all">All (8)</button>
+          <button type="button" class="filter-btn" data-category="Development">Development</button>
+          <button type="button" class="filter-btn" data-category="Music">Music</button>
+          <button type="button" class="filter-btn" data-category="Gaming">Gaming</button>
+        </div>
+
+        <!-- JS Rendered Cards -->
+        <div class="cards-grid" id="cardsGrid"></div>
+      </div>
+    </section>
+
+    <!-- About & FAQ -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-info">
+            <h2>About ISTONEDEV Lab</h2>
+            <p>ISTONEDEV Lab is an independent knowledge base and creative workshop at the intersection of code and digital art. We believe the best software is written to a great soundtrack, and the best games are born from bold technical experiments.</p>
+            <ul class="rules-list">
+              <li><strong>Open Knowledge:</strong> All core guides and breakdowns are free to read.</li>
+              <li><strong>Profile Sync:</strong> Sign in to curate your personal collection of saved materials.</li>
+              <li><strong>Weekly Drops:</strong> New dev logs, synth patches, and game design notes every week.</li>
+            </ul>
+          </div>
+
+          <div class="faq-box">
+            <h3>Frequently Asked Questions</h3>
+            <div class="faq-item">
+              <h4>How do I save a material to my dashboard?</h4>
+              <p>Sign in to your account and click the heart icon (♥) on any material card.</p>
+            </div>
+            <div class="faq-item">
+              <h4>Is membership free?</h4>
+              <p>Yes, registration is completely free and unlocks full dashboard features.</p>
+            </div>
+            <div class="faq-item">
+              <h4>Where is my profile data stored?</h4>
+              <p>Your session and bookmarked items are stored locally in your browser via localStorage.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Material Details Modal -->
+  <div class="modal-backdrop" id="materialModal" aria-hidden="true">
+    <div class="modal-card">
+      <button type="button" class="modal-close" id="closeModalBtn" aria-label="Close modal">✕</button>
+      <div class="modal-emoji" id="modalEmoji"></div>
+      <span class="card-tag" id="modalCategory"></span>
+      <h3 id="modalTitle"></h3>
+      <p class="modal-meta" id="modalMeta"></p>
+      <p class="modal-full-text" id="modalText"></p>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-primary" id="modalFavBtn">Add to Favorites</button>
+        <button type="button" class="btn btn-outline" id="modalCloseSecondary">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo" href="index.html">ISTONEDEV<span>Lab</span></a>
+        <p class="footer-desc">A laboratory for web engineering, electronic music, and gaming culture.</p>
+        <p class="copyright">© 2026 ISTONEDEV Lab. All rights reserved.</p>
+      </div>
+
+      <div>
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#materials">Materials</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="cabinet.html">Dashboard</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contacts & Socials</h4>
+        <ul class="footer-links">
+          <li>Email: hello@istonedev.lab</li>
+          <li>Telegram: @istonedev_lab</li>
+          <li><a href="#footer">GitHub</a> • <a href="#footer">SoundCloud</a> • <a href="#footer">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
